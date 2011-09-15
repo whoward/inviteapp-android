@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, LTDCanadaActivity!</string>
     <string name="app_name">LTD Canada</string>
+    <string name="invitations">Invitations</string>
 </resources>

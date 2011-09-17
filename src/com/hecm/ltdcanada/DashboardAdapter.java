@@ -4,19 +4,25 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
 
 public class DashboardAdapter extends BaseAdapter implements ListAdapter {
 	private Context context;
 	
 	private Integer[] icons = {
-		android.R.drawable.ic_dialog_email
+		R.drawable.email,
+		R.drawable.speaker,
+		R.drawable.users,
+		R.drawable.profile,
+		R.drawable.settings
 	};
 	
 	private Integer[] labels = {
-		R.string.invitations
+		R.string.invitations,
+		R.string.speakers,
+		R.string.users,
+		R.string.profile,
+		R.string.settings
 	};
 	
 	public DashboardAdapter(Context c) {
@@ -42,18 +48,17 @@ public class DashboardAdapter extends BaseAdapter implements ListAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+        DashboardIcon iconView;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-            imageView = new ImageView(context);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
+        	iconView = new DashboardIcon(context);
         } else {
-            imageView = (ImageView) convertView;
+            iconView = (DashboardIcon) convertView;
         }
 
-        imageView.setImageResource(icons[position]);
-        return imageView;
+        iconView.setIconResource(icons[position]);
+        iconView.setStringResource(labels[position]);
+        
+        return iconView;
 	}
 
 }

@@ -21,7 +21,30 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     }
     
     @Override
-    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-    	Toast.makeText(DashboardActivity.this, "foo " + position, Toast.LENGTH_SHORT).show();
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    	DashboardIcon icon = (DashboardIcon) view;
+    	
+    	String text;
+    	switch(icon.getStringResource()) {
+    		case R.string.invitations:
+    			text = "You clicked on invitations";
+    			break;
+    		case R.string.speakers:
+    			text = "You clicked on speakers";
+    			break;
+    		case R.string.users:
+    			text = "You clicked on users";
+    			break;
+    		case R.string.profile:
+    			text = "You clicked on profile";
+    			break;
+    		case R.string.settings:
+    			text = "You clicked on settings";
+    			break;
+    		default:
+    			text = "You clicked on...something - WTF";
+    			break;
+    	}
+    	Toast.makeText(DashboardActivity.this, text, Toast.LENGTH_SHORT).show();
     }
 }

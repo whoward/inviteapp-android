@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, LTDCanadaActivity!</string>
     <string name="app_name">LTD Canada</string>
+    
+    <!-- Strings used as icon labels on dashboard screen -->
     <string name="invitations">Invitations</string>
+    <string name="speakers">Speakers</string>
+    <string name="users">Users</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 </resources>

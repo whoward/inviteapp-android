@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">LTD Canada</string>
     
+    <string name="never">Never</string>
+    
     <!-- Strings used as icon labels on dashboard screen -->
     <string name="invitations">Invitations</string>
     <string name="speakers">Speakers</string>
@@ -11,4 +13,15 @@
     
     <!-- Strings used for the "add" item at the head of lists -->
     <string name="add_invitation">Send an Invitation</string>
+    
+    <!-- Strings used for the invitation show page -->
+    <string name="invitation_name">Name</string>
+    <string name="invitation_email">Email</string>
+    <string name="invitation_status">Status</string>
+    <string name="invitation_views">Views</string>
+    <string name="invitation_speaker">Speaker</string>
+    <string name="invitation_link">Invitation Link</string>
+    <string name="invitation_sent_at">Sent at</string>
+    <string name="invitation_expires_at">Expires at</string>
+    <string name="invitation_last_viewed_at">Last viewed at</string>
 </resources>

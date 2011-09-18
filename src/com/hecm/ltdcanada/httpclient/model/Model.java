@@ -1,5 +1,6 @@
 package com.hecm.ltdcanada.httpclient.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,7 +11,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public abstract class Model {
+public abstract class Model implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private List<Definition> definitions;
 	private Map<Definition, Object> values;
@@ -132,7 +135,7 @@ public abstract class Model {
 		if (value == null) {
 			return null;
 		} else {
-			return new Date((Long) value);
+			return (Date) value;
 		}
 	}
 

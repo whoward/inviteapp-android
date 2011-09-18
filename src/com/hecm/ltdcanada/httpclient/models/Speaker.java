@@ -10,6 +10,9 @@ import com.hecm.ltdcanada.httpclient.model.Definition;
 import com.hecm.ltdcanada.httpclient.model.Model;
 
 public class Speaker extends Model {
+
+	private static final long serialVersionUID = 1L;
+	
 	public static List<Definition> attributes = new ArrayList<Definition>();
 	
 	static {

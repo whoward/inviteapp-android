@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_name" android:textStyle="bold"/>
+  	<TextView android:id="@+id/name"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>      
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_email" android:textStyle="bold"/>
+  	<TextView android:id="@+id/email"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_status" android:textStyle="bold"/>
+  	<TextView android:id="@+id/status"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_views" android:textStyle="bold"/>
+  	<TextView android:id="@+id/views"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_speaker" android:textStyle="bold"/>
+  	<TextView android:id="@+id/speaker"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_link" android:textStyle="bold"/>
+  	<TextView android:id="@+id/link"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_sent_at" android:textStyle="bold"/>
+  	<TextView android:id="@+id/sent_at"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_expires_at" android:textStyle="bold"/>
+  	<TextView android:id="@+id/expires_at"/>
+  </TableRow>
+  
+  <View android:layout_height="1dp" android:background="#FF909090"/>
+  
+  <TableRow android:padding="5dp">
+  	<TextView android:text="@+string/invitation_last_viewed_at" android:textStyle="bold"/>
+  	<TextView android:id="@+id/last_viewed_at"/>
+  </TableRow>
+</TableLayout>

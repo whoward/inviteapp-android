@@ -15,6 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".invitations.InvitationsListActivity"></activity>
+        <activity android:name=".invitations.InvitationsShowActivity"></activity>
 
     </application>
 </manifest>

@@ -48,7 +48,7 @@ public class Client {
 	
 	public static Client sharedInstance() {
 		if(sharedInstance == null) {
-			sharedInstance = new Client("192.168.0.48", 3000, "whoward@hecm.ca", "secret");
+			sharedInstance = new Client("192.168.0.48", 3001, "whoward@hecm.ca", "secret");
 		}
 		return sharedInstance;
 	}

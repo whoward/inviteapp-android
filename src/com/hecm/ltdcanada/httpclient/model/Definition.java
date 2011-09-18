@@ -1,6 +1,11 @@
 package com.hecm.ltdcanada.httpclient.model;
 
-public class Definition {
+import java.io.Serializable;
+
+public class Definition implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
 	public enum Type { STRING, INTEGER, REAL, DATE };
 	
 	private String name;

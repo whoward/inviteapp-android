@@ -11,6 +11,8 @@ import com.hecm.ltdcanada.httpclient.model.Model;
 
 public class Account extends Model {
 
+	private static final long serialVersionUID = 1L;
+	
 	public static List<Definition> attributes = new ArrayList<Definition>();
 	
 	static {

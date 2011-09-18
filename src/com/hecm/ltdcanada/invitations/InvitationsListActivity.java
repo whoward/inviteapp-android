@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,15 +52,24 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 	
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-		String text;
+		String text = null;
+		Intent intent = null;
 		if(view instanceof InvitationView) {
-			text = ((InvitationView) view).getInvitation().getString("Name");
+			Invitation invite = ((InvitationView) view).getInvitation();
+			
+			intent = new Intent(view.getContext(), InvitationsShowActivity.class);
+			intent.putExtra("invitation", invite);
 		} else if(view instanceof AddItemView) {
 			text = "adding a new invitation";
-		} else {
-			text = "wtf?";
+		} 
+		
+		if(text != null) {
+			Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 		}
 		
-		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+		if(intent != null) {
+			this.startActivity(intent);
+		}
+		
 	}
 }

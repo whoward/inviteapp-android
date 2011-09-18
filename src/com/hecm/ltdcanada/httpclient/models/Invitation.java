@@ -13,6 +13,8 @@ import com.hecm.ltdcanada.httpclient.model.Model;
 
 public final class Invitation extends Model {
 
+	private static final long serialVersionUID = 1L;
+	
 	public static List<Definition> attributes = new ArrayList<Definition>();
 	
 	static {

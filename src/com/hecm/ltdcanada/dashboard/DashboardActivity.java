@@ -1,12 +1,16 @@
-package com.hecm.ltdcanada;
+package com.hecm.ltdcanada.dashboard;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import com.hecm.ltdcanada.R;
+import com.hecm.ltdcanada.invitations.InvitationsListActivity;
 
 public class DashboardActivity extends Activity implements OnItemClickListener {
     /** Called when the activity is first created. */
@@ -24,10 +28,11 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     	DashboardIcon icon = (DashboardIcon) view;
     	
-    	String text;
+    	String text = null;
+    	Intent intent = null;
     	switch(icon.getStringResource()) {
     		case R.string.invitations:
-    			text = "You clicked on invitations";
+    			intent = new Intent(view.getContext(), InvitationsListActivity.class);
     			break;
     		case R.string.speakers:
     			text = "You clicked on speakers";
@@ -45,6 +50,14 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			text = "You clicked on...something - WTF";
     			break;
     	}
-    	Toast.makeText(DashboardActivity.this, text, Toast.LENGTH_SHORT).show();
+    	
+    	if(text != null) {
+    		Toast.makeText(DashboardActivity.this, text, Toast.LENGTH_SHORT).show();
+    	}
+    	
+    	if(intent != null) {
+    		this.startActivity(intent);
+    	}
+    	
     }
 }

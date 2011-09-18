@@ -6,6 +6,10 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.graphics.Color;
+
+import com.hecm.ltdcanada.R;
+
 import com.hecm.ltdcanada.httpclient.model.Definition;
 import com.hecm.ltdcanada.httpclient.model.Model;
 
@@ -34,6 +38,18 @@ public final class Invitation extends Model {
 	public Invitation(JSONObject json) throws JSONException {
 		super(attributes);
 		this.setValues(json);
+	}
+	
+	public boolean isExpired() {
+		return this.getString("Status").equals("Expired");
+	}
+
+	public CharSequence getViewsString() {
+		return String.format("%d/%d", this.getInteger("Views"), this.getInteger("MaxViews"));
+	}
+
+	public int getStatusColor() {
+		return Color.parseColor(isExpired() ? "#bb0000" : "#00bb00");
 	}
 	
 }

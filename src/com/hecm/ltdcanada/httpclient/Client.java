@@ -38,15 +38,26 @@ public class Client {
 	private String host;
 	private String username;
 	private String password;
+	private int port;
 	
 	private static final String INVITATIONS_RESOURCE = "pqv_invitations";
 	private static final String ACCOUNTS_RESOURCE = "accounts";
 	private static final String SPEAKERS_RESOURCE = "speakers";
 	
-	public Client(String host, String username, String password) {
+	private static Client sharedInstance = null; 
+	
+	public static Client sharedInstance() {
+		if(sharedInstance == null) {
+			sharedInstance = new Client("192.168.0.48", 3000, "whoward@hecm.ca", "secret");
+		}
+		return sharedInstance;
+	}
+	
+	public Client(String host, int port, String username, String password) {
 		this.setHost(host);
 		this.setUsername(username);
 		this.setPassword(password);
+		this.setPort(port);
 	}
 	
 	// -----------------------------------------------
@@ -137,8 +148,12 @@ public class Client {
 		this.password = password;
 	}
 	
+	public void setPort(int port) {
+		this.port = port;
+	}
+	
 	public int getPort() {
-		return 3001;
+		return this.port;
 	}
 	
 	private <T extends Model> List<T> getResourceCollection(Class<T> klass, String resource) throws ClientException, IOException {

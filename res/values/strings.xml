@@ -8,4 +8,7 @@
     <string name="users">Users</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
+    
+    <!-- Strings used for the "add" item at the head of lists -->
+    <string name="add_invitation">Send an Invitation</string>
 </resources>

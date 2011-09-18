@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="expired_invitation_color">#BB0000</color>
-    <color name="active_invitation_color">#00BB00</color>
-    
-</resources>

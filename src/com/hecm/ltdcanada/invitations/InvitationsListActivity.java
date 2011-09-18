@@ -11,11 +11,13 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.InvitationListViewAdapter;
 import com.hecm.ltdcanada.adapters.InvitationView;
 import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Invitation;
+import com.hecm.ltdcanada.views.AddItemView;
 
 public class InvitationsListActivity extends ListActivity implements OnItemClickListener {
 	
@@ -28,11 +30,15 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 		try {
 			this.invitations = Client.sharedInstance().getAllInvitations();
 			
-			setListAdapter(new InvitationListViewAdapter(this, this.invitations));
-
+			AddItemView addItem = AddItemView.inflateNew(this);
+			addItem.setText(R.string.add_invitation);
+			
 			ListView lv = getListView();
 			lv.setTextFilterEnabled(true);
 			lv.setOnItemClickListener(this);
+			lv.addHeaderView(addItem);
+			
+			this.setListAdapter(new InvitationListViewAdapter(this, this.invitations));
 			
 		} catch (ClientException e) {
 			// TODO Auto-generated catch block
@@ -45,7 +51,15 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 	
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-		InvitationView invitationView = (InvitationView) view;
-		Toast.makeText(getApplicationContext(), invitationView.getInvitation().getString("Name"), Toast.LENGTH_SHORT).show();
+		String text;
+		if(view instanceof InvitationView) {
+			text = ((InvitationView) view).getInvitation().getString("Name");
+		} else if(view instanceof AddItemView) {
+			text = "adding a new invitation";
+		} else {
+			text = "wtf?";
+		}
+		
+		Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 	}
 }

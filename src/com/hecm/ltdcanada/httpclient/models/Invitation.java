@@ -8,8 +8,6 @@ import org.json.JSONObject;
 
 import android.graphics.Color;
 
-import com.hecm.ltdcanada.R;
-
 import com.hecm.ltdcanada.httpclient.model.Definition;
 import com.hecm.ltdcanada.httpclient.model.Model;
 

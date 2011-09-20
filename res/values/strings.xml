@@ -14,7 +14,7 @@
     <!-- Strings used for the "add" item at the head of lists -->
     <string name="add_invitation">Send an Invitation</string>
     
-    <!-- Strings used for the invitation show page -->
+    <!-- Strings used for the invitation show/create page -->
     <string name="invitation_name">Name</string>
     <string name="invitation_email">Email</string>
     <string name="invitation_status">Status</string>
@@ -24,4 +24,6 @@
     <string name="invitation_sent_at">Sent at</string>
     <string name="invitation_expires_at">Expires at</string>
     <string name="invitation_last_viewed_at">Last viewed at</string>
+    <string name="invitation_create">Send Invitation</string>
+    <string name="invitation_speaker_prompt">Pick a Speaker</string>
 </resources>

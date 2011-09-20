@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.InvitationListViewAdapter;
@@ -52,7 +51,6 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 	
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-		String text = null;
 		Intent intent = null;
 		if(view instanceof InvitationView) {
 			Invitation invite = ((InvitationView) view).getInvitation();
@@ -60,11 +58,7 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 			intent = new Intent(view.getContext(), InvitationsShowActivity.class);
 			intent.putExtra("invitation", invite);
 		} else if(view instanceof AddItemView) {
-			text = "adding a new invitation";
-		} 
-		
-		if(text != null) {
-			Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+			intent = new Intent(view.getContext(), InvitationsCreateActivity.class);
 		}
 		
 		if(intent != null) {

@@ -1,7 +1,9 @@
 package com.hecm.ltdcanada.invitations;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -52,20 +54,24 @@ public class InvitationsShowActivity extends Activity {
     	Date expiresAt = invite.getDate("ExpiresAt");
     	Date viewedAt = invite.getDate("ViewedAt");
     	
+    	DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG);
+    	formatter.setTimeZone(TimeZone.getDefault());
+    	
+    	
     	if(sentAt != null) {
-    		getTextView(R.id.sent_at).setText(sentAt.toString());
+    		getTextView(R.id.sent_at).setText(formatter.format(sentAt));
     	} else {
     		getTextView(R.id.sent_at).setText(R.string.never);
     	}
     	
     	if(expiresAt != null) {
-    		getTextView(R.id.expires_at).setText(expiresAt.toString());
+    		getTextView(R.id.expires_at).setText(formatter.format(expiresAt));
     	} else {
     		getTextView(R.id.expires_at).setText(R.string.never);
     	}
     	
     	if(viewedAt != null) {
-    		getTextView(R.id.last_viewed_at).setText(viewedAt.toString());
+    		getTextView(R.id.last_viewed_at).setText(formatter.format(viewedAt));
     	} else {
     		getTextView(R.id.last_viewed_at).setText(R.string.never);
     	}

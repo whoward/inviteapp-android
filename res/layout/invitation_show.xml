@@ -6,63 +6,137 @@
   android:layout_height="match_parent">
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_name" android:textStyle="bold"/>
-  	<TextView android:id="@+id/name"/>
+  	<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_name" android:textStyle="bold" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+  	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>      
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_email" android:textStyle="bold"/>
-  	<TextView android:id="@+id/email"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_email" 
+	  			  android:textStyle="bold" 
+	  			  android:layout_width="fill_parent" 
+	  			  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/email" 
+	  			  android:layout_width="fill_parent" 
+	  			  android:layout_height="wrap_content"/>
+  	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_status" android:textStyle="bold"/>
-  	<TextView android:id="@+id/status"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+  		<TextView android:text="@+string/invitation_status" 
+  				  android:textStyle="bold" 
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+  		<TextView android:id="@+id/status" 
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+  	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_views" android:textStyle="bold"/>
-  	<TextView android:id="@+id/views"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_views" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/views"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_speaker" android:textStyle="bold"/>
-  	<TextView android:id="@+id/speaker"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_speaker" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/speaker"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_link" android:textStyle="bold"/>
-  	<TextView android:id="@+id/link"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_link" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/link"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_sent_at" android:textStyle="bold"/>
-  	<TextView android:id="@+id/sent_at"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_sent_at" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/sent_at"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_expires_at" android:textStyle="bold"/>
-  	<TextView android:id="@+id/expires_at"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_expires_at" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/expires_at"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
   
   <View android:layout_height="1dp" android:background="#FF909090"/>
   
   <TableRow android:padding="5dp">
-  	<TextView android:text="@+string/invitation_last_viewed_at" android:textStyle="bold"/>
-  	<TextView android:id="@+id/last_viewed_at"/>
+  	<LinearLayout android:orientation="vertical" 
+  				  android:layout_width="wrap_content" 
+  				  android:layout_height="wrap_content">
+	  	<TextView android:text="@+string/invitation_last_viewed_at" 
+	  			  android:textStyle="bold"
+  				  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	  	<TextView android:id="@+id/last_viewed_at"
+	  	  		  android:layout_width="fill_parent" 
+  				  android:layout_height="wrap_content"/>
+	</LinearLayout>
   </TableRow>
 </TableLayout>

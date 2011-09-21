@@ -14,6 +14,7 @@
     <!-- Strings used for the "add" item at the head of lists -->
     <string name="add_invitation">Send an Invitation</string>
     <string name="add_account">Add a new Account</string>
+    <string name="add_speaker">Add a new Speaker</string>
     
     <!-- Strings used for the invitation show/create page -->
     <string name="invitation_name">Name</string>

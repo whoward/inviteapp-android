@@ -8,44 +8,45 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 
-import com.hecm.ltdcanada.httpclient.models.Account;
+import com.hecm.ltdcanada.httpclient.models.Speaker;
 
-public class AccountListViewAdapter extends BaseAdapter implements ListAdapter {
+public class SpeakerListViewAdapter extends BaseAdapter implements ListAdapter {
 	private Context context;
-	private List<Account> accounts;
+	private List<Speaker> speakers;
 	
-	public AccountListViewAdapter(Context context, List<Account> accounts) {
+	public SpeakerListViewAdapter(Context context, List<Speaker> speakers) {
 		this.context = context;
-		this.accounts = accounts;
+		this.speakers = speakers;
 	}
 
 	@Override
 	public int getCount() {
-		return this.accounts.size();
+		return this.speakers.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return this.accounts.get(position);
+		return this.speakers.get(position);
 	}
 
 	@Override
 	public long getItemId(int position) {
-		return this.accounts.get(position).getInteger("ID");
+		return this.speakers.get(position).getInteger("ID");
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		AccountView view;
+		SpeakerView view;
 		
 		if(convertView == null) {
-			view = AccountView.inflateNew(context);
+			view = SpeakerView.inflateNew(context);
 		} else {
-			view = (AccountView) convertView;
+			view = (SpeakerView) convertView;
 		}
 		
-		view.setAccount(this.accounts.get(position));
+		view.setSpeaker(this.speakers.get(position));
 		
 		return view;
 	}
+
 }

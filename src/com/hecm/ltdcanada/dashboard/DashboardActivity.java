@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.accounts.AccountsListActivity;
 import com.hecm.ltdcanada.invitations.InvitationsListActivity;
+import com.hecm.ltdcanada.speakers.SpeakersListActivity;
 
 public class DashboardActivity extends Activity implements OnItemClickListener {
     /** Called when the activity is first created. */
@@ -36,7 +37,7 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			intent = new Intent(view.getContext(), InvitationsListActivity.class);
     			break;
     		case R.string.speakers:
-    			text = "You clicked on speakers";
+    			intent = new Intent(view.getContext(), SpeakersListActivity.class);
     			break;
     		case R.string.users:
     			intent = new Intent(view.getContext(), AccountsListActivity.class);

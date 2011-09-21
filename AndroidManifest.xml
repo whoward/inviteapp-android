@@ -20,6 +20,9 @@
         <activity android:name=".accounts.AccountsListActivity"></activity>
         <activity android:name=".accounts.AccountsShowActivity"></activity>
         <activity android:name=".accounts.AccountsCreateActivity"></activity>
+        <activity android:name=".speakers.SpeakersListActivity"></activity>
+        <activity android:name=".speakers.SpeakersCreateActivity"></activity>
+        <activity android:name=".speakers.SpeakersShowActivity"></activity>
 
     </application>
 </manifest>

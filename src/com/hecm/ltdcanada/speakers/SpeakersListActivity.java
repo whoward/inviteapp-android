@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.SpeakerListViewAdapter;
+import com.hecm.ltdcanada.adapters.SpeakerView;
 import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Speaker;
@@ -48,19 +50,19 @@ public class SpeakersListActivity extends ListActivity implements OnItemClickLis
 	
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-//		Intent intent = null;
-//		if(view instanceof AccountView) {
-//			Account account = ((AccountView) view).getAccount();
-//			
-//			intent = new Intent(view.getContext(), AccountsShowActivity.class);
-//			intent.putExtra("account", account);
-//		} else if(view instanceof AddItemView) {
-//			intent = new Intent(view.getContext(), AccountsCreateActivity.class);
-//		}
-//		
-//		if(intent != null) {
-//			this.startActivity(intent);
-//		}
+		Intent intent = null;
+		if(view instanceof SpeakerView) {
+			Speaker speaker = ((SpeakerView) view).getSpeaker();
+			
+			intent = new Intent(view.getContext(), SpeakersShowActivity.class);
+			intent.putExtra("speaker", speaker);
+		} else if(view instanceof AddItemView) {
+			intent = new Intent(view.getContext(), SpeakersCreateActivity.class);
+		}
+		
+		if(intent != null) {
+			this.startActivity(intent);
+		}
 		
 	}
 }

@@ -37,4 +37,8 @@
     <string name="account_lastsignin">Last Sign-in At</string>
     <string name="account_create">Create Account</string>
     <string name="account_role_prompt">Pick a Role</string>
+    
+    <!-- Strings used for the speaker show/create page -->
+    <string name="speaker_name">Name</string>
+    <string name="speaker_base_url">Base URL</string>
 </resources>

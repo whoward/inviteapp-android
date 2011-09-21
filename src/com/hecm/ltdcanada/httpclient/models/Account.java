@@ -33,4 +33,21 @@ public class Account extends Model {
 		this.setValues(json);
 	}
 	
+	public String getIdentifyingName() {
+		String firstName = this.getString("FirstName");
+		String lastName = this.getString("LastName");
+		
+		if(firstName == null && lastName == null) {
+			return this.getString("Email");
+		} else {
+			if(firstName == null) {
+				firstName = "";
+			}
+			if(lastName == null) {
+				lastName = "";
+			}
+			return (firstName + " " + lastName).trim(); 
+		}
+	}
+	
 }

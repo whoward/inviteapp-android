@@ -10,6 +10,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.hecm.ltdcanada.R;
+import com.hecm.ltdcanada.accounts.AccountsListActivity;
 import com.hecm.ltdcanada.invitations.InvitationsListActivity;
 
 public class DashboardActivity extends Activity implements OnItemClickListener {
@@ -38,7 +39,7 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			text = "You clicked on speakers";
     			break;
     		case R.string.users:
-    			text = "You clicked on users";
+    			intent = new Intent(view.getContext(), AccountsListActivity.class);
     			break;
     		case R.string.profile:
     			text = "You clicked on profile";

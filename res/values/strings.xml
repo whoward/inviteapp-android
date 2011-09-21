@@ -13,7 +13,7 @@
     
     <!-- Strings used for the "add" item at the head of lists -->
     <string name="add_invitation">Send an Invitation</string>
-    <string name="add_account">Add a new User</string>
+    <string name="add_account">Add a new Account</string>
     
     <!-- Strings used for the invitation show/create page -->
     <string name="invitation_name">Name</string>
@@ -34,4 +34,6 @@
     <string name="account_email">Email</string>
     <string name="account_role">Role</string>
     <string name="account_lastsignin">Last Sign-in At</string>
+    <string name="account_create">Create Account</string>
+    <string name="account_role_prompt">Pick a Role</string>
 </resources>

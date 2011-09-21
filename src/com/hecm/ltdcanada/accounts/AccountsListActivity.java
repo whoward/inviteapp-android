@@ -57,7 +57,7 @@ public class AccountsListActivity extends ListActivity implements OnItemClickLis
 			intent = new Intent(view.getContext(), AccountsShowActivity.class);
 			intent.putExtra("account", account);
 		} else if(view instanceof AddItemView) {
-			//intent = new Intent(view.getContext(), InvitationsCreateActivity.class);
+			intent = new Intent(view.getContext(), AccountsCreateActivity.class);
 		}
 		
 		if(intent != null) {

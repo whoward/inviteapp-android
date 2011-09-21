@@ -19,6 +19,7 @@
         <activity android:name=".invitations.InvitationsCreateActivity"></activity>
         <activity android:name=".accounts.AccountsListActivity"></activity>
         <activity android:name=".accounts.AccountsShowActivity"></activity>
+        <activity android:name=".accounts.AccountsCreateActivity"></activity>
 
     </application>
 </manifest>

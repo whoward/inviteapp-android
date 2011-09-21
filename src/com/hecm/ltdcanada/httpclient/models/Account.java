@@ -13,6 +13,8 @@ public class Account extends Model {
 
 	private static final long serialVersionUID = 1L;
 	
+	public static final String[] ROLES = new String[] {"admin", "user"};
+	
 	public static List<Definition> attributes = new ArrayList<Definition>();
 	
 	static {

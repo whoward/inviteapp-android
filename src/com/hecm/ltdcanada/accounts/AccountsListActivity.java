@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,19 +50,19 @@ public class AccountsListActivity extends ListActivity implements OnItemClickLis
 	
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-		//Intent intent = null;
+		Intent intent = null;
 		if(view instanceof AccountView) {
-			//Account invite = ((AccountView) view).getAccount();
+			Account account = ((AccountView) view).getAccount();
 			
-			//intent = new Intent(view.getContext(), InvitationsShowActivity.class);
-			//intent.putExtra("invitation", invite);
+			intent = new Intent(view.getContext(), AccountsShowActivity.class);
+			intent.putExtra("account", account);
 		} else if(view instanceof AddItemView) {
 			//intent = new Intent(view.getContext(), InvitationsCreateActivity.class);
 		}
 		
-//		if(intent != null) {
-//			this.startActivity(intent);
-//		}
+		if(intent != null) {
+			this.startActivity(intent);
+		}
 		
 	}
 

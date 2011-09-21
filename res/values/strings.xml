@@ -27,4 +27,11 @@
     <string name="invitation_last_viewed_at">Last viewed at</string>
     <string name="invitation_create">Send Invitation</string>
     <string name="invitation_speaker_prompt">Pick a Speaker</string>
+    
+    <!-- Strings used for the account show/create page -->
+    <string name="account_firstname">First Name</string>
+    <string name="account_lastname">Last Name</string>
+    <string name="account_email">Email</string>
+    <string name="account_role">Role</string>
+    <string name="account_lastsignin">Last Sign-in At</string>
 </resources>

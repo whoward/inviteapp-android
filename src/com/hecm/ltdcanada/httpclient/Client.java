@@ -48,8 +48,8 @@ public class Client {
 	
 	public static Client sharedInstance() {
 		if(sharedInstance == null) {
-			//sharedInstance = new Client("ltdteamcanada-beta.heroku.com", 80, "whoward@hecm.ca", "tiberian458");
-			sharedInstance = new Client("192.168.0.48", 3001, "whoward@hecm.ca", "secret");
+			sharedInstance = new Client("ltdteamcanada-beta.heroku.com", 80, "whoward@hecm.ca", "tiberian458");
+			//sharedInstance = new Client("192.168.0.48", 3001, "whoward@hecm.ca", "secret");
 		}
 		return sharedInstance;
 	}
@@ -107,6 +107,10 @@ public class Client {
 	
 	public void deleteAccount(Account a) throws ClientException, IOException {
 		this.<Account>deleteResource(Account.class, ACCOUNTS_RESOURCE, a);
+	}
+	
+	public Account getUserAccount() throws ClientException, IOException {
+		return this.<Account>getResource(Account.class, ACCOUNTS_RESOURCE, "profile");
 	}
 
 	// -----------------------------------------------

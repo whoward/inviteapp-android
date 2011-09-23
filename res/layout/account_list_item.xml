@@ -11,4 +11,8 @@
        		  android:ellipsize="end" 
        		  android:textStyle="bold"
        		  android:textSize="15sp"/>
+	<TextView android:id="@+id/role"
+           	  android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textStyle="italic"/>
 </com.hecm.ltdcanada.adapters.AccountView>

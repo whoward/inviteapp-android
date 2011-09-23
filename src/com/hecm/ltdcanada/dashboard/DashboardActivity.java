@@ -1,5 +1,7 @@
 package com.hecm.ltdcanada.dashboard;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,10 @@ import android.widget.Toast;
 
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.accounts.AccountsListActivity;
+import com.hecm.ltdcanada.accounts.AccountsShowActivity;
+import com.hecm.ltdcanada.httpclient.Client;
+import com.hecm.ltdcanada.httpclient.ClientException;
+import com.hecm.ltdcanada.httpclient.models.Account;
 import com.hecm.ltdcanada.invitations.InvitationsListActivity;
 import com.hecm.ltdcanada.speakers.SpeakersListActivity;
 
@@ -43,8 +49,22 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			intent = new Intent(view.getContext(), AccountsListActivity.class);
     			break;
     		case R.string.profile:
-    			text = "You clicked on profile";
+    			Account profile = null;
+    			
+    			try {
+    				profile = Client.sharedInstance().getUserAccount();
+    			} catch (ClientException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			} catch (IOException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    			
+    			intent = new Intent(view.getContext(), AccountsShowActivity.class);
+    			intent.putExtra("account", profile);
     			break;
+    			
     		case R.string.settings:
     			text = "You clicked on settings";
     			break;

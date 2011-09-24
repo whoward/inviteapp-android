@@ -4,23 +4,25 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.accounts.AccountsListActivity;
 import com.hecm.ltdcanada.accounts.AccountsShowActivity;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Account;
 import com.hecm.ltdcanada.invitations.InvitationsListActivity;
+import com.hecm.ltdcanada.settings.SettingsActivity;
 import com.hecm.ltdcanada.speakers.SpeakersListActivity;
 
-public class DashboardActivity extends Activity implements OnItemClickListener {
+public class DashboardActivity extends Activity implements OnItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,18 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
         GridView gridview = (GridView) findViewById(R.id.dashboard);
         gridview.setAdapter(new DashboardAdapter(this));
         gridview.setOnItemClickListener(this);
+        
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        
+        Global.setPreferences(prefs.getAll());
+        
+        prefs.registerOnSharedPreferenceChangeListener(this);
     }
     
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     	DashboardIcon icon = (DashboardIcon) view;
     	
-    	String text = null;
     	Intent intent = null;
     	switch(icon.getStringResource()) {
     		case R.string.invitations:
@@ -52,7 +59,7 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			Account profile = null;
     			
     			try {
-    				profile = Client.sharedInstance().getUserAccount();
+    				profile = Global.getClient().getUserAccount();
     			} catch (ClientException e) {
     				// TODO Auto-generated catch block
     				e.printStackTrace();
@@ -66,20 +73,18 @@ public class DashboardActivity extends Activity implements OnItemClickListener {
     			break;
     			
     		case R.string.settings:
-    			text = "You clicked on settings";
-    			break;
-    		default:
-    			text = "You clicked on...something - WTF";
+    			intent = new Intent(view.getContext(), SettingsActivity.class);
     			break;
     	}
-    	
-    	if(text != null) {
-    		Toast.makeText(DashboardActivity.this, text, Toast.LENGTH_SHORT).show();
-    	}
-    	
+    	    	
     	if(intent != null) {
     		this.startActivity(intent);
     	}
     	
     }
+
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+		Global.preferenceUpdated(key, prefs.getString(key, null));
+	}
 }

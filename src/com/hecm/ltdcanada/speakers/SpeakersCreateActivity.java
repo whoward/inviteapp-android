@@ -9,8 +9,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Speaker;
 
@@ -39,7 +39,7 @@ public class SpeakersCreateActivity extends Activity implements OnClickListener 
 		speaker.set("BaseURL", this.baseUrlView.getText().toString());
 		
 		try {
-			Client.sharedInstance().createSpeaker(speaker);
+			Global.getClient().createSpeaker(speaker);
 		} catch (ClientException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

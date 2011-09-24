@@ -23,6 +23,7 @@
         <activity android:name=".speakers.SpeakersListActivity"></activity>
         <activity android:name=".speakers.SpeakersCreateActivity"></activity>
         <activity android:name=".speakers.SpeakersShowActivity"></activity>
+        <activity android:name=".settings.SettingsActivity"></activity>
 
     </application>
 </manifest>

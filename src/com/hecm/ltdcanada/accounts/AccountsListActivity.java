@@ -11,10 +11,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.AccountListViewAdapter;
 import com.hecm.ltdcanada.adapters.AccountView;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Account;
 import com.hecm.ltdcanada.views.AddItemView;
@@ -27,7 +27,7 @@ public class AccountsListActivity extends ListActivity implements OnItemClickLis
 		super.onCreate(savedInstanceState);
 		
 		try {
-			this.accounts = Client.sharedInstance().getAllAccounts();
+			this.accounts = Global.getClient().getAllAccounts();
 			
 			AddItemView addItem = AddItemView.inflateNew(this);
 			addItem.setText(R.string.add_account);

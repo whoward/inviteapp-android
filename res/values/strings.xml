@@ -42,4 +42,16 @@
     <string name="speaker_name">Name</string>
     <string name="speaker_base_url">Base URL</string>
     <string name="speaker_create">Create Speaker</string>
+    
+    <!-- Strings used for the settings screen -->
+    <string name="settings_category_credentials">Login Details</string>
+    <string name="settings_category_advanced">Advanced Settings</string>
+    <string name="settings_login">Set Login</string>
+    <string name="settings_login_summary">Enter your login name</string>
+    <string name="settings_password">Set Password</string>
+    <string name="settings_password_summary">Enter your password</string>
+    <string name="settings_api_host">Web Server Hostname</string>
+    <string name="settings_api_host_summary">Enter the hostname of the web server</string>
+    <string name="settings_api_port">Web Server Port</string>
+    <string name="settings_api_port_summary">Enter the port number of the web server</string>
 </resources>

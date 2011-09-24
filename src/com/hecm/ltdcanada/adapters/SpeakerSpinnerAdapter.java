@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.hecm.ltdcanada.httpclient.Client;
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Speaker;
 
@@ -21,7 +21,7 @@ public class SpeakerSpinnerAdapter extends BaseAdapter implements SpinnerAdapter
 	
 	public SpeakerSpinnerAdapter(Context context) throws ClientException, IOException {
 		this.context = context;
-		this.speakers = Client.sharedInstance().getAllSpeakers();
+		this.speakers = Global.getClient().getAllSpeakers();
 	}
 
 	@Override

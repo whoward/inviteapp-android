@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Account;
 
@@ -43,7 +43,7 @@ public class AccountsCreateActivity extends Activity implements OnClickListener 
 		account.set("Role", this.roleView.getSelectedItem());
 		
 		try {
-			Client.sharedInstance().createAccount(account);
+			Global.getClient().createAccount(account);
 		} catch (ClientException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

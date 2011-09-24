@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.SpeakerSpinnerAdapter;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Invitation;
 
@@ -54,7 +54,7 @@ public class InvitationsCreateActivity extends Activity implements OnClickListen
 		invite.set("SpeakerID", this.speakerView.getSelectedItemId());
 		
 		try {
-			Client.sharedInstance().createInvitation(invite);
+			Global.getClient().createInvitation(invite);
 		} catch (ClientException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

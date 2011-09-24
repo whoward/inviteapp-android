@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@+string/settings_category_credentials">
+    	<EditTextPreference android:name="@+string/settings_login"
+    						android:summary="@+string/settings_login_summary"
+    						android:defaultValue=""
+    						android:title="@+string/settings_login"
+    						android:key="login"/>
+    	<EditTextPreference android:name="@+string/settings_password"
+    						android:summary="@+string/settings_password_summary"
+    						android:defaultValue=""
+    						android:title="@+string/settings_password"
+    						android:key="password"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@+string/settings_category_advanced">
+    	<EditTextPreference android:name="@+string/settings_api_host"
+    						android:summary="@+string/settings_api_host_summary"
+    						android:defaultValue="ltdteamcanada-beta.heroku.com"
+    						android:title="@+string/settings_api_host"
+    						android:key="apiHost"/>
+    	<EditTextPreference android:name="@+string/settings_api_port"
+    						android:summary="@+string/settings_api_port_summary"
+    						android:defaultValue="80"
+    						android:title="@+string/settings_api_port"
+    						android:key="apiPort"/>
+    </PreferenceCategory>
+</PreferenceScreen>

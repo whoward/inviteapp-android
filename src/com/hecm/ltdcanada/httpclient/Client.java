@@ -44,16 +44,6 @@ public class Client {
 	private static final String ACCOUNTS_RESOURCE = "accounts";
 	private static final String SPEAKERS_RESOURCE = "speakers";
 	
-	private static Client sharedInstance = null; 
-	
-	public static Client sharedInstance() {
-		if(sharedInstance == null) {
-			sharedInstance = new Client("ltdteamcanada-beta.heroku.com", 80, "whoward@hecm.ca", "tiberian458");
-			//sharedInstance = new Client("192.168.0.48", 3001, "whoward@hecm.ca", "secret");
-		}
-		return sharedInstance;
-	}
-	
 	public Client(String host, int port, String username, String password) {
 		this.setHost(host);
 		this.setUsername(username);

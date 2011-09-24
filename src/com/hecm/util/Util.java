@@ -31,4 +31,13 @@ public final class Util {
 		
 		return sb.toString();
 	}
+	
+	public static int arrayIndexOf(String[] arr, String item) {
+		for(int i = 0; i < arr.length; i++) {
+			if(item.equals(arr[i])) {
+				return i;
+			}
+		}
+		return -1;
+	}
 }

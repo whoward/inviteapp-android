@@ -9,8 +9,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Invitation;
 import com.hecm.ltdcanada.httpclient.models.Speaker;
@@ -38,7 +38,7 @@ public class InvitationsShowActivity extends Activity {
     	
     	
 		try {
-			Speaker speaker = Client.sharedInstance().getSpeaker(invite.getInteger("SpeakerID").toString());
+			Speaker speaker = Global.getClient().getSpeaker(invite.getInteger("SpeakerID").toString());
 			getTextView(R.id.speaker).setText(speaker.getString("Name"));
 		} catch (ClientException e) {
 			// TODO Auto-generated catch block

@@ -11,10 +11,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.hecm.ltdcanada.Global;
 import com.hecm.ltdcanada.R;
 import com.hecm.ltdcanada.adapters.InvitationListViewAdapter;
 import com.hecm.ltdcanada.adapters.InvitationView;
-import com.hecm.ltdcanada.httpclient.Client;
 import com.hecm.ltdcanada.httpclient.ClientException;
 import com.hecm.ltdcanada.httpclient.models.Invitation;
 import com.hecm.ltdcanada.views.AddItemView;
@@ -28,7 +28,7 @@ public class InvitationsListActivity extends ListActivity implements OnItemClick
 		super.onCreate(savedInstanceState);
 		
 		try {
-			this.invitations = Client.sharedInstance().getAllInvitations();
+			this.invitations = Global.getClient().getAllInvitations();
 			
 			AddItemView addItem = AddItemView.inflateNew(this);
 			addItem.setText(R.string.add_invitation);
